@@ -25,5 +25,4 @@ public class QuickReplies {
         this.title = title;
         this.payload = payload;
     }
-
 }

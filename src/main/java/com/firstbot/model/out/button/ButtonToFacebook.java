@@ -35,13 +35,13 @@ public class ButtonToFacebook {
 		this.message = message;
 	}
 
-	public static ButtonToFacebook firstButtonToFacebook(long id){
+	public static ButtonToFacebook ButtonToFacebook(long id){
 		List<Button> buttonList = new ArrayList<>();
 		List<Elements> elements =  new ArrayList<>();
 
 		Button btn1 = new Button("hair cut","HAIR CUT");
 		Button btn2 = new Button("bear cut","BEAR CUT");
-		Button btn3 = new Button("cut","CUT");
+		Button btn3 = new Button("hair&bear cut","HAIR&BEAR CUT");
 
 		buttonList.add(btn1);
 		buttonList.add(btn2);

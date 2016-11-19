@@ -1,28 +1,25 @@
 package com.firstbot.controller;
 
-import com.firstbot.constant.FacebookConstants;
-import com.firstbot.model.UserProfile;
 import com.firstbot.model.in.MessageFromFacebook;
-import com.firstbot.processor.impl.MessagesProcessor;
+import com.firstbot.processor.MessagesProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
 
 @RestController
-public class MainController {
+public class IndexController {
     @Autowired
     RestTemplate restTemplate;
     @Autowired
     MessagesProcessor messagesProcessor;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String indexGet(@RequestParam("hub.challenge") String str ){
+    public String indexGet(@RequestParam("hub.challenge") String verifyToken){
         //перевіка VERIFY_TOKEN
-        return str;
+        return verifyToken;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)

@@ -1,4 +1,4 @@
-package com.firstbot.processor.impl;
+package com.firstbot.processor;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.firstbot.model.in.MessageFromFacebook;
