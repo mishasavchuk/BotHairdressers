@@ -1,6 +1,5 @@
 package com.firstbot.service;
 
-import com.firstbot.constant.FacebookConstants;
 import com.firstbot.constant.State;
 import com.firstbot.entity.Hairdresser;
 import com.firstbot.entity.User;
@@ -20,6 +19,9 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Optional;
+
+import static com.firstbot.constant.FacebookConstants.*;
 
 @Service
 public class FacebookService {
@@ -34,7 +36,7 @@ public class FacebookService {
 
     public void sendText(long id, String text) {
         try {
-            restTemplate.postForObject(FacebookConstants.FACEBOOK_POST_URL + FacebookConstants.ACCESS_TOKEN, new SimpleMessageToFacebook(new Recipient(id), new Message(text)), SimpleMessageToFacebook.class);
+            restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new SimpleMessageToFacebook(new Recipient(id), new Message(text)), SimpleMessageToFacebook.class);
         } catch (HttpClientErrorException ex) {
             System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
         } catch (Exception ex) {
@@ -44,7 +46,7 @@ public class FacebookService {
 
     public void sendButton(long id) {
         try {
-            restTemplate.postForObject(FacebookConstants.FACEBOOK_POST_URL + FacebookConstants.ACCESS_TOKEN, ButtonToFacebook.buttonToFacebook(id), ButtonToFacebook.class);
+            restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, ButtonToFacebook.buttonToFacebook(id), ButtonToFacebook.class);
         } catch (HttpClientErrorException ex) {
             System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
         } catch (Exception ex) {
@@ -55,7 +57,7 @@ public class FacebookService {
     public void sendQuickDayReplies(long id) {
         String text = "Choose day when you wont to do haircut: ";
         try {
-            restTemplate.postForObject(FacebookConstants.FACEBOOK_POST_URL + FacebookConstants.ACCESS_TOKEN, new QuickRepliesToFacebook(new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, messagesProcessor.createDayQuickReplies())), QuickRepliesToFacebook.class);
+            restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new QuickRepliesToFacebook(new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, messagesProcessor.createDayQuickReplies())), QuickRepliesToFacebook.class);
         } catch (HttpClientErrorException ex) {
             System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
         } catch (Exception ex) {
@@ -68,7 +70,7 @@ public class FacebookService {
             List<QuickReplies> hourQuickReplies = messagesProcessor.createHourQuickReplies(messagesProcessor.getDayCut(), id);
             if (hourQuickReplies != null) {
                 String text = "Choose hour when you wont to do haircut: ";
-                restTemplate.postForObject(FacebookConstants.FACEBOOK_POST_URL + FacebookConstants.ACCESS_TOKEN, new QuickRepliesToFacebook(
+                restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new QuickRepliesToFacebook(
                         new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, hourQuickReplies)), QuickRepliesToFacebook.class);
             }
         } catch (HttpClientErrorException ex) {
@@ -81,7 +83,7 @@ public class FacebookService {
     public void sendStartedButton() {
         try {
             StartedMessage startedMessage = StartedMessage.createStartMessage();
-            restTemplate.postForObject(FacebookConstants.GREETING_URL + FacebookConstants.ACCESS_TOKEN, startedMessage, StartedMessage.class);
+            restTemplate.postForObject(GREETING_URL + ACCESS_TOKEN, startedMessage, StartedMessage.class);
         } catch (HttpClientErrorException e) {
             System.out.println("Can not get profile info " + e);
         } catch (Exception e) {
@@ -94,7 +96,7 @@ public class FacebookService {
             System.out.println("GREETING");
             GreetingText greetingText = GreetingText.greetingText();
             System.out.println(greetingText);
-            restTemplate.postForObject(FacebookConstants.GREETING_URL + FacebookConstants.ACCESS_TOKEN, greetingText, GreetingText.class);
+            restTemplate.postForObject(GREETING_URL + ACCESS_TOKEN, greetingText, GreetingText.class);
         } catch (HttpClientErrorException e) {
             System.out.println("Can not get profile info " + e);
         } catch (Exception e) {
@@ -102,27 +104,24 @@ public class FacebookService {
         }
     }
 
-    User getUserProfile(String userId) {
+    Optional<User> getUser(String userId) {
         try {
-            String requestUrl = FacebookConstants.PROFILE_URL.replace("$user_id$", userId);
-            return restTemplate.getForObject(requestUrl + FacebookConstants.ACCESS_TOKEN, User.class);
+            String requestUrl = PROFILE_URL.replace("$user_id$", userId);
+            return Optional.of(restTemplate.getForObject(requestUrl + ACCESS_TOKEN, User.class));
         } catch (HttpClientErrorException e) {
             System.out.println("Can not get profile info " + e);
         } catch (Exception e) {
             System.out.println("Can not get profile info " + e);
         }
-        return null;
+        return Optional.empty();
     }
 
     public void createUserIfNoInDB(long id) {
         if (!userService.findAllUser().contains(id)) {
-            if (getUserProfile(String.valueOf(id))!=null) {
-                User userProfile = getUserProfile(String.valueOf(id));
-                userService.addUserProfile(id, userProfile.getFirstName(), userProfile.getLastName(), userProfile.getGender(), State.TEXT);
-            }
-            else{
+            Optional<User> user = getUser(String.valueOf(id));
+            userService.addUserProfile(id, user.get().getFirstName(), user.get().getLastName(), user.get().getGender(), State.TEXT);
+            } else {
                 System.out.println("Can not create user");
-            }
         }
     }
     //cron = "*/30 * * * *"
