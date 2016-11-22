@@ -15,7 +15,6 @@ import com.firstbot.processor.impl.MessagesProcessorImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -39,13 +38,7 @@ public class FacebookService {
     }
 
     public void sendButton(long id) {
-        try {
             restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, ButtonToFacebook.buttonToFacebook(id), ButtonToFacebook.class);
-        } catch (HttpClientErrorException ex) {
-            System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
-        } catch (Exception ex) {
-            System.err.println("Can not send button to messenger");
-        }
     }
 
     public void sendQuickDayReplies(long id) {
