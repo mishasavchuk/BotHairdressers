@@ -14,6 +14,7 @@ import com.firstbot.service.UserService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
@@ -147,8 +148,10 @@ public class MessagesProcessorImpl implements MessagesProcessor {
                     processHourQuickReplies(id, messageFromFacebook);
                     break;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (HttpClientErrorException ex) {
+            System.out.println("HttpClientErrorException " + ex);
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }

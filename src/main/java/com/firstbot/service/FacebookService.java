@@ -35,13 +35,7 @@ public class FacebookService {
     private MessagesProcessorImpl messagesProcessor;
 
     public void sendText(long id, String text) {
-        try {
-            restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new SimpleMessageToFacebook(new Recipient(id), new Message(text)), SimpleMessageToFacebook.class);
-        } catch (HttpClientErrorException ex) {
-            System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
-        } catch (Exception ex) {
-            System.err.println("Can not send simple text to messenger");
-        }
+        restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new SimpleMessageToFacebook(new Recipient(id), new Message(text)), SimpleMessageToFacebook.class);
     }
 
     public void sendButton(long id) {
@@ -56,64 +50,33 @@ public class FacebookService {
 
     public void sendQuickDayReplies(long id) {
         String text = "Choose day when you wont to do haircut: ";
-        try {
-            restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new QuickRepliesToFacebook(new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, messagesProcessor.createDayQuickReplies())), QuickRepliesToFacebook.class);
-        } catch (HttpClientErrorException ex) {
-            System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
-        } catch (Exception ex) {
-            System.err.println("Can not send quickDayReplies to messenger");
-        }
+        restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new QuickRepliesToFacebook(new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, messagesProcessor.createDayQuickReplies())), QuickRepliesToFacebook.class);
     }
 
     public void sendQuickHourReplies(long id) {
-        try {
-            List<QuickReplies> hourQuickReplies = messagesProcessor.createHourQuickReplies(messagesProcessor.getDayCut(), id);
-            if (hourQuickReplies != null) {
-                String text = "Choose hour when you wont to do haircut: ";
-                restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new QuickRepliesToFacebook(
-                        new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, hourQuickReplies)), QuickRepliesToFacebook.class);
+        List<QuickReplies> hourQuickReplies = messagesProcessor.createHourQuickReplies(messagesProcessor.getDayCut(), id);
+        if (hourQuickReplies != null) {
+            String text = "Choose hour when you wont to do haircut: ";
+            restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new QuickRepliesToFacebook(
+                    new com.firstbot.model.Recipient(String.valueOf(id)), new com.firstbot.model.out.quickreplies.Message(text, hourQuickReplies)), QuickRepliesToFacebook.class);
             }
-        } catch (HttpClientErrorException ex) {
-            System.err.println("HttpClientErrorException: " + ex.getResponseBodyAsString());
-        } catch (Exception ex) {
-            System.err.println("Can not send quickHourReplies to messenger");
-        }
     }
 
     public void sendStartedButton() {
-        try {
             StartedMessage startedMessage = StartedMessage.createStartMessage();
             restTemplate.postForObject(GREETING_URL + ACCESS_TOKEN, startedMessage, StartedMessage.class);
-        } catch (HttpClientErrorException e) {
-            System.out.println("Can not get profile info " + e);
-        } catch (Exception e) {
-            System.out.println("Can not get profile info " + e);
-        }
     }
 
     public void sendGreetingText() {
-        try {
             System.out.println("GREETING");
             GreetingText greetingText = GreetingText.greetingText();
             System.out.println(greetingText);
             restTemplate.postForObject(GREETING_URL + ACCESS_TOKEN, greetingText, GreetingText.class);
-        } catch (HttpClientErrorException e) {
-            System.out.println("Can not get profile info " + e);
-        } catch (Exception e) {
-            System.out.println("Can not get profile info " + e);
-        }
     }
 
     Optional<User> getUser(String userId) {
-        try {
             String requestUrl = PROFILE_URL.replace("$user_id$", userId);
-            return Optional.of(restTemplate.getForObject(requestUrl + ACCESS_TOKEN, User.class));
-        } catch (HttpClientErrorException e) {
-            System.out.println("Can not get profile info " + e);
-        } catch (Exception e) {
-            System.out.println("Can not get profile info " + e);
-        }
-        return Optional.empty();
+        return Optional.ofNullable(restTemplate.getForObject(requestUrl + ACCESS_TOKEN, User.class));
     }
 
     public void createUserIfNoInDB(long id) {
