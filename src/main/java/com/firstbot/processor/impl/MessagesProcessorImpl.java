@@ -101,6 +101,10 @@ public class MessagesProcessorImpl implements MessagesProcessor {
         else return false;
     }
 
+    public long getId(MessageFromFacebook messageFromFacebook) {
+        return Long.parseLong(messageFromFacebook.getEntryList().get(0).getMessagingList().get(0).getSender().getId());
+    }
+
     public List<QuickReplies> createDayQuickReplies() {
         List<QuickReplies> replies = new ArrayList<>(Day.values().length);
         for (Day day : Day.values()) replies.add(new QuickReplies("text", day.name().toLowerCase(), day.name()));
@@ -128,7 +132,7 @@ public class MessagesProcessorImpl implements MessagesProcessor {
 
     @Override
     public void processMessage(MessageFromFacebook messageFromFacebook) {
-        long id = Long.parseLong(messageFromFacebook.getEntryList().get(0).getMessagingList().get(0).getSender().getId());
+        long id = getId(messageFromFacebook);
         facebookService.createUserIfNoInDB(id);
         try {
             switch (userService.findState(id)) {
