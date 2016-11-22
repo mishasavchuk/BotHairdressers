@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class HairdresserServiceImpl {
+public class HairdresserService {
     @Autowired
-    HairdresserRepository hairdresserRepository;
+    private HairdresserRepository hairdresserRepository;
 
     public Hairdresser addPerson(long idFacebook, User userProfile, String dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder) {
         return hairdresserRepository.saveAndFlush(new Hairdresser(userProfile, typeHairCut, dayHairCut, localDateTime, reminder));

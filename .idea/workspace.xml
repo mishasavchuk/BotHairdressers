@@ -2,36 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9151c4d7-e827-440c-b615-001ceef3ae29" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/startedbutton/Action.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/startedbutton/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/startedbutton/StartedMessage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/SimpleMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/SimpleMessageToFacebook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/constant/FacebookConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/constant/FacebookConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/constant/Gender.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/service/FacebookService.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/service/HairdresserServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/service/UserProfileServiceImpl.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/com/firstbot/controller/IndexController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/entity/Hairdresser.class" afterPath="$PROJECT_DIR$/target/classes/com/firstbot/entity/Hairdresser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/com/firstbot/entity/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/processor/impl/MessagesProcessorImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/com/firstbot/processor/impl/MessagesProcessorImpl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/firstbot/processor/impl/MessagesProcessorImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/firstbot/processor/impl/MessagesProcessorImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/controller/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/converter/LocalDateTimeConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/converter/LocalDateTimeConverter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/entity/Hairdresser.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/entity/Hairdresser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/Recipient.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/Recipient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/Entry.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/Entry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/MessageFromFacebook.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/MessageFromFacebook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/QuickReplies.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/QuickReplies.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/Recipient.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/Recipient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Attachment.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Attachment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Button.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Button.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/ButtonToFacebook.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/ButtonToFacebook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Elements.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Elements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Message.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Payload.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Payload.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/quickreplies/QuickReplies.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/quickreplies/QuickReplies.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/quickreplies/QuickRepliesToFacebook.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/quickreplies/QuickRepliesToFacebook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/Message.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/Recipient.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/Recipient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/repository/HairdresserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/repository/HairdresserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileServiceImpl.java" />
     </list>
     <ignored path="FirstBot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,34 +41,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java">
+      <file leaf-file-name="HairdresserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.448276">
+              <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+              <folding>
+                <element signature="method#addPerson#0;class#HairdresserService#0" expanded="false" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
+                <element signature="method#updateReminder#0;class#HairdresserService#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.15254237">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+              <folding>
+                <element signature="method#addUserProfile#0;class#UserService#0" expanded="false" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1217#1218#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserProfileRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserProfileRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/repository/UserProfileRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5973684">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserProfileServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#736#737#0" expanded="true" />
-              </folding>
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,23 +93,11 @@
       <file leaf-file-name="MessagesProcessorImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.413793">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#sendText#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#sendButton#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#sendQuickDayReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#sendQuickHourReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#createDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#createHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#isFreeTimeToDoHairCut#0;class#MessagesProcessorImpl#0" expanded="false" />
                 <element signature="method#cutTime#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#sendReminder#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#getUserProfile#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#createUserIfNoInDB#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#sendStartedButton#0;class#MessagesProcessorImpl#0" expanded="false" />
-                <element signature="method#sendGreetingText#0;class#MessagesProcessorImpl#0" expanded="false" />
                 <element signature="method#isPressButton#0;class#MessagesProcessorImpl#0" expanded="false" />
                 <element signature="method#isPressQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
                 <element signature="method#pressQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
@@ -114,23 +105,57 @@
                 <element signature="method#processButton#0;class#MessagesProcessorImpl#0" expanded="false" />
                 <element signature="method#processDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
                 <element signature="method#processHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+                <element signature="method#isFreeTimeToDoHairCut#0;class#MessagesProcessorImpl#0" expanded="false" />
+                <element signature="method#createDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+                <element signature="method#createHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HairdresserRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/repository/HairdresserRepository.java">
+      <file leaf-file-name="Gender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/Gender.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding>
+                <element signature="e#170#171#0" expanded="true" />
+                <element signature="e#204#205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/FacebookService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62068963">
+              <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#sendText#0;class#FacebookService#0" expanded="false" />
+                <element signature="method#sendButton#0;class#FacebookService#0" expanded="false" />
+                <element signature="method#sendQuickDayReplies#0;class#FacebookService#0" expanded="false" />
+                <element signature="method#sendQuickHourReplies#0;class#FacebookService#0" expanded="false" />
+                <element signature="method#sendStartedButton#0;class#FacebookService#0" expanded="false" />
+                <element signature="method#sendGreetingText#0;class#FacebookService#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestApp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/controller/IndexController.java">
+      <file leaf-file-name="RestTemplateConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
@@ -162,11 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/constant/Options.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/generictemplate/GenericTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/generic/Button.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/generic/MessageElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/generic/MessageRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/generic/GenericTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/SimpleMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/simpleMessage/SimpleMessageToFacebook.java" />
@@ -183,10 +203,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/greetingtext/Greeting.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/button/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/Recipient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/startedbutton/StartedMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/out/startedbutton/Message.java" />
@@ -205,14 +223,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/Recipient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/QuickReplies.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/model/in/Entry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/entity/Hairdresser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/converter/LocalDateTimeConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/constant/FacebookConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/constant/Hour.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/repository/HairdresserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/firstbot/repository/UserProfileRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/entity/Hairdresser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/constant/Gender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/service/FacebookService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java" />
       </list>
     </option>
   </component>
@@ -288,6 +313,284 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="FirstBot" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="processor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirstBot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="firstbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -897,7 +1200,7 @@
       <workItem from="1479648252302" duration="599000" />
       <workItem from="1479716459116" duration="19694000" />
       <workItem from="1479743490681" duration="18623000" />
-      <workItem from="1479802462528" duration="1424000" />
+      <workItem from="1479802462528" duration="12613000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1479235422175</created>
@@ -915,11 +1218,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350939000" />
+    <option name="totallyTimeSpent" value="362128000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -930,11 +1233,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33224222" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3747954" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25945538" sideWeight="0.471831" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25945538" sideWeight="0.471831" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25945538" sideWeight="0.52816904" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -998,15 +1301,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="84" />
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1015,34 +1310,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/time/format/DateTimeFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7472826">
-          <caret line="809" column="32" selection-start-line="809" selection-start-column="32" selection-end-line="809" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3314121">
-          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/time/LocalDateTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2881356">
@@ -1081,40 +1348,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="method#addPerson#0;class#HairdresserServiceImpl#0" expanded="false" />
-            <element signature="method#updateReminder#0;class#HairdresserServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/processor/MessagesProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/model/Recipient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="method#Recipient#0;class#Recipient#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,8 +1393,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="false" />
+            <element signature="e#283#284#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1321,42 +1559,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2236842">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/converter/LocalDateTimeConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67105263">
           <caret line="19" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/entity/Hairdresser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73157895">
-          <caret line="94" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/FacebookConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40263158">
-          <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1369,71 +1575,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/Hour.java">
+    <entry file="file://$PROJECT_DIR$/../шляпа/FirstBot/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80526316">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7692308">
+          <caret line="135" column="30" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/FacebookConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="4" column="233" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="233" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/Hour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18763797">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/repository/HairdresserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/UserProfileServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/model/Recipient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="e#736#737#0" expanded="true" />
+            <element signature="method#Recipient#0;class#Recipient#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/entity/Hairdresser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sendText#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#sendButton#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#sendQuickDayReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#sendQuickHourReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#createDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#createHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#isFreeTimeToDoHairCut#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#cutTime#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#sendReminder#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#getUserProfile#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#createUserIfNoInDB#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#sendStartedButton#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#sendGreetingText#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#isPressButton#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#isPressQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#pressQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#processMessage#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#processButton#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#processDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-            <element signature="method#processHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
-          </folding>
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/repository/UserProfileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/constant/Gender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#170#171#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/TestApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/RestTemplateConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
@@ -1441,11 +1684,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/repository/UserProfileRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/HairdresserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5973684">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
+        <state vertical-scroll-proportion="-6.448276">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding>
+            <element signature="method#addPerson#0;class#HairdresserService#0" expanded="false" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+            <element signature="method#updateReminder#0;class#HairdresserService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/processor/impl/MessagesProcessorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.413793">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#cutTime#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#isPressButton#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#isPressQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#pressQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#processMessage#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#processButton#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#processDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#processHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#isFreeTimeToDoHairCut#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#createDayQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+            <element signature="method#createHourQuickReplies#0;class#MessagesProcessorImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/FacebookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62068963">
+          <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#sendText#0;class#FacebookService#0" expanded="false" />
+            <element signature="method#sendButton#0;class#FacebookService#0" expanded="false" />
+            <element signature="method#sendQuickDayReplies#0;class#FacebookService#0" expanded="false" />
+            <element signature="method#sendQuickHourReplies#0;class#FacebookService#0" expanded="false" />
+            <element signature="method#sendStartedButton#0;class#FacebookService#0" expanded="false" />
+            <element signature="method#sendGreetingText#0;class#FacebookService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/firstbot/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15254237">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="method#addUserProfile#0;class#UserService#0" expanded="false" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

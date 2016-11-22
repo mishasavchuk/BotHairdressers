@@ -1,5 +1,6 @@
 package com.firstbot.service;
 
+import com.firstbot.constant.Gender;
 import com.firstbot.constant.State;
 import com.firstbot.entity.User;
 import com.firstbot.repository.UserProfileRepository;
@@ -9,11 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserProfileServiceImpl {
+public class UserService {
     @Autowired
-    UserProfileRepository userProfileRepository;
+    private UserProfileRepository userProfileRepository;
 
-    public User addUserProfile(long idFacebook, String firstName, String lastName, String gender, State state) {
+    public User addUserProfile(long idFacebook, String firstName, String lastName, Gender gender, State state) {
         return userProfileRepository.saveAndFlush(new User(idFacebook, firstName, lastName, gender, state));
     }
 

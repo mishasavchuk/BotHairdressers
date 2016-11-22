@@ -22,11 +22,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public void indexPost(@RequestBody MessageFromFacebook messageFromFacebook) {
-        try {
+    public void indexPost(@RequestBody MessageFromFacebook messageFromFacebook) throws JsonProcessingException {
             messagesProcessor.processMessage(messageFromFacebook);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
     }
 }

@@ -1,6 +1,7 @@
 package com.firstbot.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.firstbot.constant.Gender;
 import com.firstbot.constant.State;
 import lombok.Data;
 
@@ -13,7 +14,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue
-    private int userId;
+    private Integer userId;
     @Column(name = "firs_name")
     @JsonProperty("first_name")
     private String firstName;
@@ -21,10 +22,10 @@ public class User {
     @JsonProperty("last_name")
     private String lastName;
     @Column(name = "gender")
-    @JsonProperty("gender")
-    private String gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
     @Column
-    private long idFacebook;
+    private Long idFacebook;
     @Column
     @Enumerated(EnumType.STRING)
     private State state;
@@ -36,7 +37,7 @@ public class User {
 
     }
 
-    public User(long idFacebook, String firstName, String lastName, String gender, State state) {
+    public User(long idFacebook, String firstName, String lastName, Gender gender, State state) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Hairdresser {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
@@ -24,7 +24,7 @@ public class Hairdresser {
     @Column(name = "date_hair_cut")
     private LocalDateTime dateHairCut;
     @Column
-    private boolean reminder;
+    private Boolean reminder;
 
 
     public Hairdresser() {
