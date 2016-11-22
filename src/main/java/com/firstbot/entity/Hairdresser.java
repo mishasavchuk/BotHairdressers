@@ -27,7 +27,7 @@ public class Hairdresser {
     private boolean reminder;
 
 
-    public Hairdresser(){
+    public Hairdresser() {
 
     }
 
@@ -89,6 +89,6 @@ public class Hairdresser {
 
     @Override
     public String toString() {
-        return "id: "+ id + " typeCut " +typeHairCut + " day " + dayHairCut + " dateHairCut "+dateHairCut;
+        return "date hair cut " + dateHairCut + " - type cut: " + typeHairCut;
     }
 }

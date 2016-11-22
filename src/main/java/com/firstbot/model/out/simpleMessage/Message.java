@@ -1,4 +1,4 @@
-package com.firstbot.model.out.simpleMessage;
+package com.firstbot.model.out.simplemessage;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -8,10 +8,11 @@ public class Message {
     @JsonProperty("text")
     String text;
 
-     Message(){
+    Message() {
 
-     }
-     public Message(String text) {
-         this.text = text;
-     }
+    }
+
+    public Message(String text) {
+        this.text = text;
+    }
 }

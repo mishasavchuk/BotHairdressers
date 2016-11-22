@@ -13,22 +13,27 @@ public class UserProfileServiceImpl {
     @Autowired
     UserProfileRepository userProfileRepository;
 
-    public User addUserProfile(long idFacebook, String firstName, String lastName, String gender, State state){
-        return userProfileRepository.saveAndFlush(new User(idFacebook,firstName,lastName,gender,state));
+    public User addUserProfile(long idFacebook, String firstName, String lastName, String gender, State state) {
+        return userProfileRepository.saveAndFlush(new User(idFacebook, firstName, lastName, gender, state));
     }
+
     public State findState(long id) {
-        return userProfileRepository.findState(id);
+        return userProfileRepository.findStateByIdFacebook(id);
     }
-    public void updateState(long id,State state){
-        userProfileRepository.updateUserState(id,state);
+
+    public void updateState(long id, State state) {
+        userProfileRepository.updateUserState(id, state);
     }
-    public int findUserId(long id){
-        return userProfileRepository.findUserId(id);
+
+    public int findUserId(long id) {
+        return userProfileRepository.findUserIdByIdFacebook(id);
     }
-    public List<Long> findAllFacebookId(){
+
+    public List<Long> findAllUser() {
         return userProfileRepository.findAllFacebookId();
     }
-    public User findUserByFacebookId(long id){
-        return userProfileRepository.findUserByFacebookId(id);
+
+    public User findUserByFacebookId(long id) {
+        return userProfileRepository.findUserByIdFacebook(id);
     }
 }

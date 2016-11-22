@@ -29,7 +29,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private State state;
 
-    @OneToMany(mappedBy = "id",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
     List<Hairdresser> hairdressers = new ArrayList<>();
 
     public User() {

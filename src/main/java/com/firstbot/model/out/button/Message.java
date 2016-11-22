@@ -4,13 +4,13 @@ import lombok.Data;
 
 @Data
 public class Message {
-	private Attachment attachment;
+    private Attachment attachment;
 
-	public Message(){
+    public Message() {
 
-	}
+    }
 
-	public Message(Attachment attachment) {
-		this.attachment = attachment;
-	}
+    public Message(Attachment attachment) {
+        this.attachment = attachment;
+    }
 }

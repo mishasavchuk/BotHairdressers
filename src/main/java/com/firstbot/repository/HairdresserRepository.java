@@ -11,12 +11,18 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Transactional
-public interface HairdresserRepository extends JpaRepository<Hairdresser,Long> {
-     List<Hairdresser> findAll();
-     List<Hairdresser> findByDayHairCut(String dayHairCut);
-     @Query("SELECT f FROM Hairdresser f where TIMESTAMPDIFF(HOUR,CURRENT_TIMESTAMP(),f.dateHairCut) < 1")
-     List<Hairdresser> findReminderDateHairCut();
-     @Modifying
-     @Query("update Hairdresser h set h.reminder = ?1 where h.user = ?2 and h.dateHairCut = ?3")
-     void updateReminder(boolean reminder,User user,LocalDateTime dateHairCut);
+public interface HairdresserRepository extends JpaRepository<Hairdresser, Long> {
+    List<Hairdresser> findAll();
+
+    List<Hairdresser> findByUser(User user);
+
+    List<Hairdresser> findByDayHairCut(String dayHairCut);
+
+    //List<Hairdresser> findFutureHairCut();
+    @Query("SELECT f FROM Hairdresser f WHERE TIMESTAMPDIFF(MINUTE,CURRENT_TIMESTAMP(),f.dateHairCut) between 0 and 60")
+    List<Hairdresser> findReminderByDateHairCut();
+
+    @Modifying
+    @Query("UPDATE Hairdresser h SET h.reminder = ?1 WHERE h.user = ?2 AND h.dateHairCut = ?3")
+    void updateReminder(boolean reminder, User user, LocalDateTime dateHairCut);
 }

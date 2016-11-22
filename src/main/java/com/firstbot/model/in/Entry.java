@@ -11,6 +11,4 @@ public class Entry {
     private long time;
     @JsonProperty("messaging")
     private List<Messaging> messagingList;
-
-
 }

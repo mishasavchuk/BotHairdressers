@@ -17,19 +17,19 @@ import java.util.Arrays;
 
 @Configuration
 public class RestTemplateConfiguration {
-	@Bean
-	public RestTemplate restTemplate() {
-		final RestTemplate restTemplate = new RestTemplate();
-		restTemplate.setMessageConverters(Arrays.asList(new ByteArrayHttpMessageConverter(), new StringHttpMessageConverter(), new ResourceHttpMessageConverter(), new SourceHttpMessageConverter<>(), new AllEncompassingFormHttpMessageConverter(),
-				new MappingJackson2HttpMessageConverter(jacksonObjectMapper())));
-		return restTemplate;
-	}
+    @Bean
+    public RestTemplate restTemplate() {
+        final RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setMessageConverters(Arrays.asList(new ByteArrayHttpMessageConverter(), new StringHttpMessageConverter(), new ResourceHttpMessageConverter(), new SourceHttpMessageConverter<>(), new AllEncompassingFormHttpMessageConverter(),
+                new MappingJackson2HttpMessageConverter(jacksonObjectMapper())));
+        return restTemplate;
+    }
 
-	@Bean
-	public ObjectMapper jacksonObjectMapper() {
-		final ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
-		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		return objectMapper;
-	}
+    @Bean
+    public ObjectMapper jacksonObjectMapper() {
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        return objectMapper;
+    }
 }

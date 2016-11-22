@@ -14,19 +14,26 @@ public class HairdresserServiceImpl {
     @Autowired
     HairdresserRepository hairdresserRepository;
 
-    public Hairdresser addPerson(long idFacebook, User userProfile, String dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder){
-        return hairdresserRepository.saveAndFlush(new Hairdresser(userProfile,typeHairCut,dayHairCut,localDateTime,reminder));
+    public Hairdresser addPerson(long idFacebook, User userProfile, String dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder) {
+        return hairdresserRepository.saveAndFlush(new Hairdresser(userProfile, typeHairCut, dayHairCut, localDateTime, reminder));
     }
-    public List<Hairdresser> findByDayHairCut(String day){
+
+    public List<Hairdresser> findByDayHairCut(String day) {
         return hairdresserRepository.findByDayHairCut(day);
     }
-    public List<Hairdresser> findReminderDateHairCut(){
-        return hairdresserRepository.findReminderDateHairCut();
+
+    /*public List<Hairdresser> findByUser(User user){
+        return hairdresserRepository.findByUser(user);
+    }*/
+    public List<Hairdresser> findReminderDateHairCut() {
+        return hairdresserRepository.findReminderByDateHairCut();
     }
-    public void updateReminder(boolean b, User user,LocalDateTime dateHairCut){
-        hairdresserRepository.updateReminder(b,user,dateHairCut);
+
+    public void updateReminder(boolean b, User user, LocalDateTime dateHairCut) {
+        hairdresserRepository.updateReminder(b, user, dateHairCut);
     }
-    public List<Hairdresser> findAll(){
-        return  hairdresserRepository.findAll();
+
+    public List<Hairdresser> findAll() {
+        return hairdresserRepository.findAll();
     }
 }

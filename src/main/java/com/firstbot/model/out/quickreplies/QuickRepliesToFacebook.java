@@ -9,7 +9,7 @@ public class QuickRepliesToFacebook {
     private Recipient recipient;
     private Message message;
 
-    public QuickRepliesToFacebook(){
+    public QuickRepliesToFacebook() {
 
     }
 

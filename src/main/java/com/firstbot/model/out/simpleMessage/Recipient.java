@@ -1,18 +1,19 @@
-package com.firstbot.model.out.simpleMessage;
+package com.firstbot.model.out.simplemessage;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class Recipient {
-     @JsonProperty("id")
-     long id;
+    @JsonProperty("id")
+    long id;
 
-     public Recipient(){
+    public Recipient() {
 
-     }
-     public Recipient(long id) {
-         this.id = id;
-     }
+    }
 
- }
+    public Recipient(long id) {
+        this.id = id;
+    }
+
+}

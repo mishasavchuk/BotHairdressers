@@ -12,9 +12,8 @@ public class LocalDateTimeConverter implements AttributeConverter<LocalDateTime,
 
     @Override
     public LocalDateTime convertToEntityAttribute(Timestamp timestamp) {
-        if(timestamp!=null) {
+        if (timestamp != null) {
             return timestamp.toLocalDateTime();
-        }
-        else return null;
+        } else return null;
     }
 }

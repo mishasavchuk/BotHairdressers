@@ -5,14 +5,14 @@ import lombok.Data;
 
 @Data
 public class Recipient {
-     @JsonProperty("id")
-     String id;
+    @JsonProperty("id")
+    String id;
 
-     public Recipient(){
+    public Recipient() {
 
-     }
+    }
 
-     public Recipient(String id) {
-         this.id = id;
-     }
- }
+    public Recipient(String id) {
+        this.id = id;
+    }
+}

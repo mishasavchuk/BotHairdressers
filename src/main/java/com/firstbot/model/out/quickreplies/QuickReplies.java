@@ -10,11 +10,11 @@ public class QuickReplies {
     String title;
     String payload;
 
-    public QuickReplies(){
+    public QuickReplies() {
 
     }
 
-    public QuickReplies(String contentType, String title, String payload){
+    public QuickReplies(String contentType, String title, String payload) {
         this.contentType = contentType;
         this.title = title;
         this.payload = payload;
