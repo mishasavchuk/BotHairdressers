@@ -1,5 +1,6 @@
 package com.firstbot.model.out.simplemessage;
 
+import com.firstbot.model.Recipient;
 import lombok.Data;
 
 @Data

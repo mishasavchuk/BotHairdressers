@@ -15,23 +15,28 @@ public class User {
     @Id
     @GeneratedValue
     private Integer userId;
+
     @Column(name = "firs_name")
     @JsonProperty("first_name")
     private String firstName;
+
     @Column(name = "last_name")
     @JsonProperty("last_name")
     private String lastName;
+
     @Column(name = "gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
     @Column
     private Long idFacebook;
+
     @Column
     @Enumerated(EnumType.STRING)
     private State state;
 
     @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
-    List<Hairdresser> hairdressers = new ArrayList<>();
+    private List<Hairdresser> hairdressers = new ArrayList<>();
 
     public User() {
 

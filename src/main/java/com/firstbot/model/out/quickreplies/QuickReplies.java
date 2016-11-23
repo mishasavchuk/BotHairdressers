@@ -6,9 +6,9 @@ import lombok.Data;
 @Data
 public class QuickReplies {
     @JsonProperty("content_type")
-    String contentType;
-    String title;
-    String payload;
+    private String contentType;
+    private String title;
+    private String payload;
 
     public QuickReplies() {
 

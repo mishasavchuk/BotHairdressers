@@ -1,15 +1,12 @@
 package com.firstbot.processor.impl;
 
-import com.firstbot.constant.Day;
-import com.firstbot.constant.Hour;
 import com.firstbot.constant.State;
-import com.firstbot.entity.Hairdresser;
 import com.firstbot.model.in.MessageFromFacebook;
 import com.firstbot.model.in.Postback;
-import com.firstbot.model.out.quickreplies.QuickReplies;
 import com.firstbot.processor.MessagesProcessor;
 import com.firstbot.service.FacebookService;
 import com.firstbot.service.HairdresserService;
+import com.firstbot.service.MessageBuilderService;
 import com.firstbot.service.UserService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +15,28 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.temporal.TemporalAdjusters;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Service
 @Data
 public class MessagesProcessorImpl implements MessagesProcessor {
+
+    private final HairdresserService hairdresserService;
+
+    private final UserService userService;
+
+    private final FacebookService facebookService;
+
+    private final MessageBuilderService messageBuilderService;
+
     @Autowired
-    private UserService userService;
-    @Autowired
-    private HairdresserService hairdresserService;
-    @Autowired
-    FacebookService facebookService;
+    public MessagesProcessorImpl(HairdresserService hairdresserService, UserService userService, FacebookService facebookService, MessageBuilderService messageBuilderService) {
+        this.hairdresserService = hairdresserService;
+        this.userService = userService;
+        this.facebookService = facebookService;
+        this.messageBuilderService = messageBuilderService;
+    }
 
     private String typeCut;
     private String dayCut;
@@ -60,17 +64,17 @@ public class MessagesProcessorImpl implements MessagesProcessor {
 
     public void processMessage(long id) {
         facebookService.sendText(id, "Welcome to hairdresser, I help you record on hair cut ");
-        facebookService.sendButton(id);
+        facebookService.sendButton(id, messageBuilderService.createButtons());
         userService.updateState(id, State.BUTTON);
     }
 
     public void processButton(long id, MessageFromFacebook messageFromFacebook) {
         if (isPressButton(messageFromFacebook)) {
             typeCut = messageFromFacebook.getEntryList().get(0).getMessagingList().get(0).getPostback().getPayload();
-            facebookService.sendQuickDayReplies(id);
+            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createDayQuickReplies());
             userService.updateState(id, State.DAYQUICKREPLIES);
         } else {
-            facebookService.sendButton(id);
+            facebookService.sendButton(id, messageBuilderService.createButtons());
         }
     }
 
@@ -78,9 +82,9 @@ public class MessagesProcessorImpl implements MessagesProcessor {
         if (isPressQuickReplies(messageFromFacebook)) {
             dayCut = pressQuickReplies(messageFromFacebook);
             userService.updateState(id, State.HOURQUICKREPLIES);
-            facebookService.sendQuickHourReplies(id);
+            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createHourQuickReplies(hairdresserService.findByDayHairCut(dayCut), id));
         } else {
-            facebookService.sendQuickDayReplies(id);
+            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createDayQuickReplies());
         }
     }
 
@@ -91,55 +95,23 @@ public class MessagesProcessorImpl implements MessagesProcessor {
             facebookService.sendText(id, "Wait for you on " + dayCut.toLowerCase() + " " + timeCut + ":00");
             hairdresserService.addPerson(id, userService.findUserByFacebookId(id), dayCut, typeCut, cutTime(dayCut, timeCut), true);
         } else {
-            facebookService.sendQuickHourReplies(id);
+            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createHourQuickReplies(hairdresserService.findByDayHairCut(dayCut), id));
         }
-    }
-
-    public boolean isFreeTimeToDoHairCut(List<QuickReplies> quickReplies) {
-        System.out.println("quickReplies: " + quickReplies);
-        if (quickReplies != null && quickReplies.size() != 0) return true;
-        else return false;
     }
 
     public long getId(MessageFromFacebook messageFromFacebook) {
         return Long.parseLong(messageFromFacebook.getEntryList().get(0).getMessagingList().get(0).getSender().getId());
     }
 
-    public List<QuickReplies> createDayQuickReplies() {
-        List<QuickReplies> replies = new ArrayList<>(Day.values().length);
-        for (Day day : Day.values()) replies.add(new QuickReplies("text", day.name().toLowerCase(), day.name()));
-        return replies;
-    }
-
-    public List<QuickReplies> createHourQuickReplies(String chooseDay, long id) {
-        List<Hairdresser> hairdressers = hairdresserService.findByDayHairCut(chooseDay);
-        List<LocalTime> listHour = new ArrayList<>();
-        List<QuickReplies> replies = new ArrayList<>();
-        for (Hairdresser h : hairdressers) listHour.add(LocalTime.from(h.getDateHairCut()));
-
-        for (Hour hour : Hour.values()) {
-            if (!listHour.contains(LocalTime.parse(hour.getTime())))
-                replies.add(new QuickReplies(hour.getTime(), hour.getTime().substring(0, 2)));
-        }
-        if (isFreeTimeToDoHairCut(replies)) return replies;
-        else {
-            facebookService.sendText(id, "Sorry,On " + dayCut.toLowerCase() + " is not free seats.");
-            facebookService.sendQuickDayReplies(id);
-            userService.updateState(id, State.DAYQUICKREPLIES);
-            return null;
-        }
-    }
-
     @Override
     public void processMessage(MessageFromFacebook messageFromFacebook) {
         long id = getId(messageFromFacebook);
-        facebookService.createUserIfNoInDB(id);
+        userService.createUserIfNotExist(id);
         try {
             switch (userService.findState(id)) {
                 case TEXT:
                     processMessage(id);
                     break;
-
                 case BUTTON:
                     processButton(id, messageFromFacebook);
                     break;
@@ -147,15 +119,12 @@ public class MessagesProcessorImpl implements MessagesProcessor {
                 case DAYQUICKREPLIES:
                     processDayQuickReplies(id, messageFromFacebook);
                     break;
-
                 case HOURQUICKREPLIES:
                     processHourQuickReplies(id, messageFromFacebook);
                     break;
             }
         } catch (HttpClientErrorException ex) {
-            System.out.println("HttpClientErrorException " + ex);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            throw new RuntimeException("An error occurred when trying to process message from Facebook", ex);
         }
     }
 }

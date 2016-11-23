@@ -7,9 +7,9 @@ import java.util.List;
 
 @Data
 public class Message {
-    String text;
+    private String text;
     @JsonProperty("quick_replies")
-    List<QuickReplies> quickRepliesList;
+    private List<QuickReplies> quickRepliesList;
 
     public Message(String text, List<QuickReplies> replies) {
         this.text = text;

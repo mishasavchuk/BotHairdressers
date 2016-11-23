@@ -39,11 +39,11 @@ public class Hairdresser {
         this.reminder = reminder;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -79,16 +79,20 @@ public class Hairdresser {
         this.dateHairCut = dateHairCut;
     }
 
-    public boolean isReminder() {
+    public Boolean getReminder() {
         return reminder;
     }
 
-    public void setReminder(boolean reminder) {
+    public void setReminder(Boolean reminder) {
         this.reminder = reminder;
     }
 
     @Override
     public String toString() {
         return "date hair cut " + dateHairCut + " - type cut: " + typeHairCut;
+    }
+
+    public boolean isReminder() {
+        return reminder;
     }
 }

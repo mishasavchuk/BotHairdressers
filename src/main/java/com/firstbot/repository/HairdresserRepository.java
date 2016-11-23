@@ -16,7 +16,7 @@ public interface HairdresserRepository extends JpaRepository<Hairdresser, Long> 
 
     List<Hairdresser> findByUser(User user);
 
-    List<Hairdresser> findByDayHairCut(String dayHairCut);
+    List<Hairdresser> findByDayHairCut(String chooseDay);
 
     //List<Hairdresser> findFutureHairCut();
     @Query("SELECT f FROM Hairdresser f WHERE TIMESTAMPDIFF(MINUTE,CURRENT_TIMESTAMP(),f.dateHairCut) between 0 and 60")
