@@ -11,9 +11,9 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class IndexController {
     @Autowired
-    RestTemplate restTemplate;
+    private RestTemplate restTemplate;
     @Autowired
-    MessagesProcessor messagesProcessor;
+    private MessagesProcessor messagesProcessor;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String indexGet(@RequestParam("hub.challenge") String verifyToken) {

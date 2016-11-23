@@ -1,5 +1,6 @@
 package com.firstbot.service.impl;
 
+import com.firstbot.constant.FacebookConstants;
 import com.firstbot.entity.Hairdresser;
 import com.firstbot.service.FacebookService;
 import com.firstbot.service.HairdresserService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class ReminderServiceImpl implements ReminderService {
 
     private final HairdresserService hairdresserService;
+
     private final FacebookService facebookService;
 
     @Autowired
@@ -24,11 +26,11 @@ public class ReminderServiceImpl implements ReminderService {
     @Scheduled(fixedDelay = 5000)
     public void sendReminder() {
         hairdresserService.findReminderDateHairCut().stream()
-                .filter(Hairdresser::isReminder)
+                .filter(Hairdresser::getReminder)
                 .peek(hairdresser -> {
                             facebookService.sendText(
                                     hairdresser.getUser().getIdFacebook(),
-                                    "Do not forget come to hairdresser today on " + hairdresser.getDateHairCut().getHour() + ":00");
+                                    FacebookConstants.FORGET + hairdresser.getDateHairCut().getHour() + ":00");
                         }
                 )
                 .forEach(hairdresser -> {

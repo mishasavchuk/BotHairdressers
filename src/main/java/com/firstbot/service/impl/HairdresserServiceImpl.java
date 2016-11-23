@@ -1,5 +1,6 @@
 package com.firstbot.service.impl;
 
+import com.firstbot.constant.Day;
 import com.firstbot.entity.Hairdresser;
 import com.firstbot.entity.User;
 import com.firstbot.repository.HairdresserRepository;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Service
 public class HairdresserServiceImpl implements HairdresserService {
+
     private final HairdresserRepository hairdresserRepository;
 
     @Autowired
@@ -20,12 +22,12 @@ public class HairdresserServiceImpl implements HairdresserService {
     }
 
     @Override
-    public Hairdresser addPerson(long idFacebook, User userProfile, String dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder) {
+    public Hairdresser addPerson(long idFacebook, User userProfile, Day dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder) {
         return hairdresserRepository.saveAndFlush(new Hairdresser(userProfile, typeHairCut, dayHairCut, localDateTime, reminder));
     }
 
     @Override
-    public List<Hairdresser> findByDayHairCut(String day) {
+    public List<Hairdresser> findByDayHairCut(Day day) {
         return hairdresserRepository.findByDayHairCut(day);
     }
 

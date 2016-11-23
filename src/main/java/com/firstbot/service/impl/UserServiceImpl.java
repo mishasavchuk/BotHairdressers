@@ -18,6 +18,7 @@ import static com.firstbot.constant.FacebookConstants.PROFILE_URL;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserProfileRepository userProfileRepository;
+
     private final RestTemplate restTemplate;
 
     @Autowired
@@ -58,11 +59,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUserIfNotExist(long id) {
-        if (!findAllUser().contains(id)) {
+        if (!findAllUser().contains(id))
             getUser(id).ifPresent(user -> addUserProfile(id, user.getFirstName(), user.getLastName(),
                     user.getGender(),
                     State.TEXT));
-        }
     }
 
     private Optional<User> getUser(long userId) {

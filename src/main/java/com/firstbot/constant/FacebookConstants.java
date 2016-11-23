@@ -8,4 +8,7 @@ public class FacebookConstants {
     public final static String GREETING_URL = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=";
     public final static String GREETING_TEXT = "Welcome {{user_first_name}} {{user_last_name}} to the hairdresser,TEST";
     public final static String CHOOSE_STYLE = "Choose your style: ";
+    public final static String CHOOSE_DAY = "Choose day hair cut";
+    public final static String CHOOSE_HOUR = "Choose hour hair cut";
+    public final static String FORGET = "Do not forget come to hairdresser today on ";
 }

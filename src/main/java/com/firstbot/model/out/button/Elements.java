@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 public class Elements {
-    List<Button> buttons;
+    private List<Button> buttons;
 
     public Elements() {
 

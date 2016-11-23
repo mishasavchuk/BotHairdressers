@@ -20,6 +20,7 @@ import static com.firstbot.model.out.button.ButtonToFacebook.buttonToFacebook;
 
 @Service
 public class FacebookServiceImpl implements FacebookService {
+
     private final RestTemplate restTemplate;
 
     @Autowired
@@ -39,9 +40,6 @@ public class FacebookServiceImpl implements FacebookService {
 
     @Override
     public void sendText(long id, String text) {
-        restTemplate.postForObject(
-                FACEBOOK_POST_URL + ACCESS_TOKEN,
-                new SimpleMessageToFacebook(new Recipient(String.valueOf(id)), new com.firstbot.model.out.simplemessage.Message(text)), SimpleMessageToFacebook.class
-        );
+        restTemplate.postForObject(FACEBOOK_POST_URL + ACCESS_TOKEN, new SimpleMessageToFacebook(new Recipient(String.valueOf(id)), new com.firstbot.model.out.simplemessage.Message(text)), SimpleMessageToFacebook.class);
     }
 }

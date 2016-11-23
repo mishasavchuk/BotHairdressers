@@ -10,7 +10,6 @@ import static com.firstbot.constant.FacebookConstants.CHOOSE_STYLE;
 
 @Data
 public class ButtonToFacebook {
-
     private Recipient recipient;
     private Message message;
 

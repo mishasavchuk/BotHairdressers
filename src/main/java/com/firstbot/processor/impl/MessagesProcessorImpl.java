@@ -1,5 +1,7 @@
 package com.firstbot.processor.impl;
 
+import com.firstbot.constant.Day;
+import com.firstbot.constant.FacebookConstants;
 import com.firstbot.constant.State;
 import com.firstbot.model.in.MessageFromFacebook;
 import com.firstbot.model.in.Postback;
@@ -30,6 +32,12 @@ public class MessagesProcessorImpl implements MessagesProcessor {
 
     private final MessageBuilderService messageBuilderService;
 
+    private String typeCut;
+
+    private String dayCut;
+
+    private String timeCut;
+
     @Autowired
     public MessagesProcessorImpl(HairdresserService hairdresserService, UserService userService, FacebookService facebookService, MessageBuilderService messageBuilderService) {
         this.hairdresserService = hairdresserService;
@@ -37,10 +45,6 @@ public class MessagesProcessorImpl implements MessagesProcessor {
         this.facebookService = facebookService;
         this.messageBuilderService = messageBuilderService;
     }
-
-    private String typeCut;
-    private String dayCut;
-    private String timeCut;
 
     public static LocalDateTime cutTime(String dayHairCut, String timeCut) {
         LocalDateTime date = LocalDateTime.now().with(TemporalAdjusters.nextOrSame(DayOfWeek.valueOf(dayHairCut)));
@@ -82,9 +86,9 @@ public class MessagesProcessorImpl implements MessagesProcessor {
         if (isPressQuickReplies(messageFromFacebook)) {
             dayCut = pressQuickReplies(messageFromFacebook);
             userService.updateState(id, State.HOURQUICKREPLIES);
-            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createHourQuickReplies(hairdresserService.findByDayHairCut(dayCut), id));
+            facebookService.sendQuickReplies(id, FacebookConstants.CHOOSE_HOUR, messageBuilderService.createHourQuickReplies(hairdresserService.findByDayHairCut(Day.valueOf(dayCut)), id));
         } else {
-            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createDayQuickReplies());
+            facebookService.sendQuickReplies(id, FacebookConstants.CHOOSE_DAY, messageBuilderService.createDayQuickReplies());
         }
     }
 
@@ -92,10 +96,10 @@ public class MessagesProcessorImpl implements MessagesProcessor {
         if (isPressQuickReplies(messageFromFacebook)) {
             timeCut = pressQuickReplies(messageFromFacebook);
             userService.updateState(id, State.TEXT);
-            facebookService.sendText(id, "Wait for you on " + dayCut.toLowerCase() + " " + timeCut + ":00");
-            hairdresserService.addPerson(id, userService.findUserByFacebookId(id), dayCut, typeCut, cutTime(dayCut, timeCut), true);
+            facebookService.sendText(id, "Wait for you on " + dayCut + " " + timeCut + ":00");
+            hairdresserService.addPerson(id, userService.findUserByFacebookId(id), Day.valueOf(dayCut), typeCut, cutTime(dayCut, timeCut), true);
         } else {
-            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createHourQuickReplies(hairdresserService.findByDayHairCut(dayCut), id));
+            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createHourQuickReplies(hairdresserService.findByDayHairCut(Day.valueOf(dayCut)), id));
         }
     }
 

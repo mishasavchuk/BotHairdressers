@@ -1,5 +1,6 @@
 package com.firstbot.repository;
 
+import com.firstbot.constant.Day;
 import com.firstbot.entity.Hairdresser;
 import com.firstbot.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,7 +17,7 @@ public interface HairdresserRepository extends JpaRepository<Hairdresser, Long> 
 
     List<Hairdresser> findByUser(User user);
 
-    List<Hairdresser> findByDayHairCut(String chooseDay);
+    List<Hairdresser> findByDayHairCut(Day day);
 
     //List<Hairdresser> findFutureHairCut();
     @Query("SELECT f FROM Hairdresser f WHERE TIMESTAMPDIFF(MINUTE,CURRENT_TIMESTAMP(),f.dateHairCut) between 0 and 60")

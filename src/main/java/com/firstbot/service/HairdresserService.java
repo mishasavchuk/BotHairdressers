@@ -1,5 +1,6 @@
 package com.firstbot.service;
 
+import com.firstbot.constant.Day;
 import com.firstbot.entity.Hairdresser;
 import com.firstbot.entity.User;
 
@@ -7,9 +8,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface HairdresserService {
-    Hairdresser addPerson(long idFacebook, User userProfile, String dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder);
+    Hairdresser addPerson(long idFacebook, User userProfile, Day dayHairCut, String typeHairCut, LocalDateTime localDateTime, boolean reminder);
 
-    List<Hairdresser> findByDayHairCut(String day);
+    List<Hairdresser> findByDayHairCut(Day day);
 
     List<Hairdresser> findReminderDateHairCut();
 

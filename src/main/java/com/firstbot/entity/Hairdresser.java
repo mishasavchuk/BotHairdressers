@@ -1,11 +1,13 @@
 package com.firstbot.entity;
 
+import com.firstbot.constant.Day;
 import com.firstbot.converter.LocalDateTimeConverter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+
 public class Hairdresser {
     @Id
     @GeneratedValue
@@ -18,8 +20,8 @@ public class Hairdresser {
     @Column(name = "type_hair_cut")
     private String typeHairCut;
     @Column(name = "day_hair_cut")
-    //@Enumerated(EnumType.STRING)
-    private String dayHairCut;
+    @Enumerated(EnumType.STRING)
+    private Day dayHairCut;
     @Convert(converter = LocalDateTimeConverter.class)
     @Column(name = "date_hair_cut")
     private LocalDateTime dateHairCut;
@@ -31,7 +33,7 @@ public class Hairdresser {
 
     }
 
-    public Hairdresser(User user, String typeHairCut, String dayHairCut, LocalDateTime dateHairCut, boolean reminder) {
+    public Hairdresser(User user, String typeHairCut, Day dayHairCut, LocalDateTime dateHairCut, boolean reminder) {
         this.user = user;
         this.typeHairCut = typeHairCut;
         this.dayHairCut = dayHairCut;
@@ -63,11 +65,11 @@ public class Hairdresser {
         this.typeHairCut = typeHairCut;
     }
 
-    public String getDayHairCut() {
+    public Day getDayHairCut() {
         return dayHairCut;
     }
 
-    public void setDayHairCut(String dayHairCut) {
+    public void setDayHairCut(Day dayHairCut) {
         this.dayHairCut = dayHairCut;
     }
 
@@ -87,12 +89,4 @@ public class Hairdresser {
         this.reminder = reminder;
     }
 
-    @Override
-    public String toString() {
-        return "date hair cut " + dateHairCut + " - type cut: " + typeHairCut;
-    }
-
-    public boolean isReminder() {
-        return reminder;
-    }
 }
