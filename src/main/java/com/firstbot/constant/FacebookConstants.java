@@ -11,4 +11,5 @@ public class FacebookConstants {
     public final static String CHOOSE_DAY = "Choose day hair cut";
     public final static String CHOOSE_HOUR = "Choose hour hair cut";
     public final static String FORGET = "Do not forget come to hairdresser today on ";
+    public final static String WELCOME = "Welcome to hairdresser, I help you record on hair cut ";
 }

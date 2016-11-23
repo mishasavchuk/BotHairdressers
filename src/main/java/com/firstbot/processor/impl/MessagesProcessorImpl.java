@@ -69,7 +69,7 @@ public class MessagesProcessorImpl implements MessagesProcessor {
     }
 
     private void processMessage(long id) {
-        facebookService.sendText(id, "Welcome to hairdresser, I help you record on hair cut ");
+        facebookService.sendText(id, FacebookConstants.WELCOME);
         facebookService.sendButton(id, messageBuilderService.createButtons());
         userService.updateState(id, State.BUTTON);
     }
@@ -77,7 +77,7 @@ public class MessagesProcessorImpl implements MessagesProcessor {
     private void processButton(long id, MessageFromFacebook messageFromFacebook) {
         if (isPressButton(messageFromFacebook)) {
             typeCut = messageFromFacebook.getEntryList().get(0).getMessagingList().get(0).getPostback().getPayload();
-            facebookService.sendQuickReplies(id, "hello", messageBuilderService.createDayQuickReplies());
+            facebookService.sendQuickReplies(id, FacebookConstants.CHOOSE_DAY, messageBuilderService.createDayQuickReplies());
             userService.updateState(id, State.DAYQUICKREPLIES);
         } else {
             facebookService.sendButton(id, messageBuilderService.createButtons());
