@@ -1,6 +1,7 @@
 package com.firstbot.service.impl;
 
 import com.firstbot.constant.Day;
+import com.firstbot.constant.FacebookConstants;
 import com.firstbot.constant.Hour;
 import com.firstbot.constant.State;
 import com.firstbot.entity.Hairdresser;
@@ -52,13 +53,12 @@ public class MessageBuilderServiceImpl implements MessageBuilderService {
     }
 
     @Override
-    public List<QuickReplies> createHourQuickReplies(List<Hairdresser> hairdressersList, long id) {
-        List<Hairdresser> hairdressers = hairdressersList;
+    public List<QuickReplies> createHourQuickReplies(List<Hairdresser> hairdressers, long id) {
         List<LocalTime> listHour = new ArrayList<>();
         List<QuickReplies> replies = new ArrayList<>();
 
-        for (Hairdresser h : hairdressers) {
-            listHour.add(LocalTime.from(h.getDateHairCut()));
+        for (Hairdresser hairdresser : hairdressers) {
+            listHour.add(LocalTime.from(hairdresser.getDateHairCut()));
         }
 
         for (Hour hour : Hour.values()) {
@@ -70,7 +70,7 @@ public class MessageBuilderServiceImpl implements MessageBuilderService {
             return replies;
         } else {
             facebookService.sendText(id, "Sorry is not free seats.");
-            facebookService.sendQuickReplies(id, "hello", createDayQuickReplies());
+            facebookService.sendQuickReplies(id, FacebookConstants.CHOOSE_DAY, createDayQuickReplies());
             userService.updateState(id, State.DAYQUICKREPLIES);
             return Collections.emptyList();
         }

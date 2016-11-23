@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Message {
     @JsonProperty("text")
-    String text;
+    private String text;
 
     Message() {
 

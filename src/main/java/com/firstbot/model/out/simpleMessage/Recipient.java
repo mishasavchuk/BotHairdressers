@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Recipient {
     @JsonProperty("id")
-    long id;
+    private long id;
 
     public Recipient() {
 
